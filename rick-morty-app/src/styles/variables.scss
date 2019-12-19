@@ -3,4 +3,17 @@
 $base-font: 'Montserrat Alternates';
 $base-font-color: #362f28;
 $footer-font-color: #fff;
+$link-color: #572a91;
 $base-background-1: #f29c3a;
+
+@mixin page-title-font {
+    font-size: 35px;
+    font-weight: bold;
+    margin-bottom: 20px;
+}
+
+@mixin link-font {
+    text-decoration: none;
+    font-weight: bold;
+    color: $link-color;
+}

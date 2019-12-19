@@ -1,11 +1,8 @@
 import React from 'react';
 import ErrorComp from '../components/error/error';
 
-const Error = () => {
-
-    return (
-        <ErrorComp />
-    )
-}
+const Error = () => (
+    <ErrorComp />
+);
 
 export default Error

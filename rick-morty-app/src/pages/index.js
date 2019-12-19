@@ -1,12 +1,8 @@
-import React, { Fragment } from 'react';
+import React from 'react';
+import HomeMainInfo from '../components/home-main-info/home-main-info';
 
-const Home = () => {
-
-    return (
-        <Fragment>
-            <p>Home</p>
-        </Fragment>
-    )
-}
+const Home = () => (
+    <HomeMainInfo />
+);
 
 export default Home
