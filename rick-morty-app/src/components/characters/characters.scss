@@ -1,0 +1,47 @@
+@import '../../styles/variables';
+
+
+.characters-wrapper {
+    padding: 120px 0;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    font-family: $base-font;
+
+    .characters-title {
+        @include page-title-font;
+        align-self: center;
+        margin-bottom: 50px;
+    }
+
+    table {
+        margin: 0 100px;
+
+        .hero-row {
+
+            &:hover {
+                background-color: darken($body-background, 7%);
+            }
+
+            .hero-photo-data {
+                width: 80px;
+                height: 90px;
+                padding-left: 15px;
+                vertical-align: middle;
+                border-bottom: 1px solid #ddd;
+        
+                .hero-photo {
+                    width: 70px;
+                    height: 70px;
+                }
+            }
+        
+            .hero-name-data {
+                width: 300px;
+                vertical-align: middle;
+                font-size: 26px;
+                border-bottom: 1px solid #ddd;
+            }
+        }
+    }   
+}

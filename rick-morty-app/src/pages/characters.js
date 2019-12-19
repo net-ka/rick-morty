@@ -1,12 +1,8 @@
-import React, { Fragment } from 'react';
+import React from 'react';
+import CharactersComp from '../components/characters/characters';
 
-const Characters = () => {
-
-    return (
-        <Fragment>
-            <p>Characters</p>
-        </Fragment>
-    )
-}
+const Characters = () => (
+    <CharactersComp />
+);
 
 export default Characters

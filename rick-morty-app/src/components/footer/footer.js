@@ -3,7 +3,7 @@ import './footer.scss'
 
 const Footer = () => (
         <footer>
-            <p class="footer-text">© 2019 by Anna Fedosova</p>
+            <p className="footer-text">© 2019 by Anna Fedosova</p>
         </footer>
 );
 
