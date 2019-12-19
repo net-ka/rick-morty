@@ -6,20 +6,22 @@ import App from './App';
 import * as serviceWorker from './serviceWorker';
 
 import Characters from './pages/characters';
-import Hero from './pages/hero';
+// import Hero from './pages/hero';
 import Home from './pages/index';
 import Layout from './pages/layout';
 import Error from './pages/error';
+import HeroComp from './components/hero/heroComp';
 
 ReactDOM.render((
     <Router>
         <App>
             <Switch>
-                <Route exact path='/'component={Home} /> 
-                <Route path='/hero'component={Hero} /> 
-                <Route path='/characters'component={Characters} /> 
-                <Route path='/layout'component={Layout} />
-                <Route path='*'component={Error} />
+                <Route exact path='/' component={Home} /> 
+                {/* <Route path='/characters/:id' component={Hero} />  */}
+                <Route path='/characters/:id' component={HeroComp} />
+                <Route exact path='/characters' component={Characters} /> 
+                <Route path='/layout' component={Layout} />
+                <Route path='*' component={Error} />
           </Switch>
         </App>
     </Router>), 

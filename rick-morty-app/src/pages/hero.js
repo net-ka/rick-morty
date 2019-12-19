@@ -1,12 +1,8 @@
-import React, { Fragment } from 'react';
+import React from 'react';
+import HeroComp from '../components/hero/heroComp';
 
-const Hero = () => {
-
-    return (
-        <Fragment>
-            <p>Hero</p>
-        </Fragment>
-    )
-}
+const Hero = () => (
+    <HeroComp />
+);
 
 export default Hero

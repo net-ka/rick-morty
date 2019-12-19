@@ -18,6 +18,7 @@
         margin: 0 100px;
 
         .hero-row {
+            height: 90px;
 
             &:hover {
                 background-color: darken($body-background, 7%);
@@ -38,6 +39,7 @@
         
             .hero-name-data {
                 width: 300px;
+                height: 90px;
                 vertical-align: middle;
                 font-size: 26px;
                 border-bottom: 1px solid #ddd;

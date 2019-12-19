@@ -5,3 +5,4 @@ Demo
 | 1h | Created base structure |
 | 1h | Created router and pages |
 | 1h | Add styles to header, footer, home page, error page |
+| 1.5h | Created hero page and styles for it |
