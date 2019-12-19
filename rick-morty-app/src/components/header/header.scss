@@ -1,0 +1,36 @@
+@import '../../styles/variables';
+
+.header {
+    width: 100%;
+    height: 70px;
+    background: $base-background-1;
+    font-family: $base-font;
+    font-size: 30px;
+
+    nav {
+        height: 100%;
+
+        .nav-list {
+            display: flex;
+            justify-content: flex-end;
+            align-items: center;
+            height: 100%;
+    
+            li {
+                display: inline-block;
+                height: 32px;
+                padding: 0 10px;
+                margin-right: 15px;
+    
+                a {
+                    text-decoration: none;
+                    color: $base-font-color; 
+
+                    &:hover {
+                        color: lighten($base-font-color, 40%);
+                    }
+                }
+            }
+        }
+    }
+}

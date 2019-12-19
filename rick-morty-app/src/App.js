@@ -10,7 +10,9 @@ const App = ( {children} ) => {
     return (
       <Fragment>
         <Header />
-        {children}
+        <body>
+          {children}
+        </body>
         <Footer />
       </Fragment>
     );
