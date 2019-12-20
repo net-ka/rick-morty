@@ -1,12 +1,8 @@
-import React, { Fragment } from 'react';
+import React from 'react';
+import LayoutComp from '../components/layout-example/layoutComp';
 
-const Layout = () => {
-
-    return (
-        <Fragment>
-            <p>Layout</p>
-        </Fragment>
-    )
-}
+const Layout = () => (
+    <LayoutComp />
+);
 
 export default Layout

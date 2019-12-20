@@ -1,6 +1,7 @@
 @import '../../styles/variables';
 
 footer {
+    top: calc(100vh - 70px);
     display: flex;
     position: fixed;
     align-items: center;

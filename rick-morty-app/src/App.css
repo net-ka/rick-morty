@@ -1,5 +1,5 @@
 body {
   width: 100%;
-  height: calc(100vh - 70px);
   background-color: #faf4e1;
+  position: relative;
 }

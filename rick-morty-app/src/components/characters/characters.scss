@@ -15,7 +15,8 @@
     }
 
     table {
-        margin: 0 100px;
+        margin: 0 auto;
+        width: 50vw;
 
         .hero-row {
             height: 90px;
@@ -43,6 +44,10 @@
                 vertical-align: middle;
                 font-size: 26px;
                 border-bottom: 1px solid #ddd;
+
+                a {
+                    color: $link-color;
+                }
             }
         }
     }   
