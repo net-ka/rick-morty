@@ -2,17 +2,23 @@ import React, { Component } from 'react';
 import { Link } from 'react-router-dom';
 import './characters.scss'
 
-const path = 'https://rickandmortyapi.com/api/character';
+const path = 'https://rickandmortyapi.com/api/character/?page=';
 
 class CharactersComp extends Component {
 
     state = {
-        path: 'https://rickandmortyapi.com/api/character',
         data: {}
     }
 
     componentDidMount() {
-        fetch(`${path}`)
+        fetch(path)
+        .then(response => response.json())
+        .then(data => this.updateData(data))
+        .catch(error => error);
+    }
+
+    forFetch(data) {
+        fetch(data)
         .then(response => response.json())
         .then(data => this.updateData(data))
         .catch(error => error);
@@ -23,15 +29,30 @@ class CharactersComp extends Component {
     }
 
     changePage(data) {
-        fetch(`${data}`)
-        .then(response => response.json())
-        .then(data => this.updateData(data))
-        .catch(error => error);
+        this.forFetch(data);
 
-        const { path } = this.state;
-        const pathExceptPage = `${path}/?page=`;
+        let page = document.querySelector('.current');
 
-        document.querySelector('.current').innerHTML = `${data.split(pathExceptPage).join('')}`
+        let pagePart = data.split(path).join('');
+        let devider = pagePart.indexOf('&');
+        
+        if (devider === -1) {
+            page.innerHTML = pagePart;
+        } else {
+            const pageNum = pagePart.slice(0, devider);
+            page.innerHTML = pageNum;
+        }
+    }
+
+    findCharacter(value) {
+        const data = `${path}&name=${value}`;
+
+        let page = document.querySelector('.current');
+        if (page) {
+            page.innerHTML = '1';
+        }
+
+        this.forFetch(data);
     }
 
     render() {
@@ -46,6 +67,7 @@ class CharactersComp extends Component {
         return (
             <section className='characters-wrapper'>
                 <h1 className='characters-title'>Rick & Morty characters list</h1>
+                <input className="search-line" type="text" placeholder="Search" onChange={e => this.findCharacter(e.target.value)}></input>
                 { results && <table>
                     <tbody>
                         {results.map(({ id, name, image }) => {
@@ -61,8 +83,8 @@ class CharactersComp extends Component {
                 <div className="pages-wrapper">
                     { prev && <button className="prev" onClick={() => this.changePage(prev)}>&lt;</button>}
                     { !prev && <button className="prev hidden">&lt;</button>}
-                    <p className="current">1</p>
-                    { next && <button className="next" onClick={() => this.changePage(next)}>&gt;</button>}
+                    { results && <p className="current">1</p>}
+                    { next && results && <button className="next" onClick={() => this.changePage(next)}>&gt;</button>}
                     { !next && <button className="next hidden">&gt;</button>}
                 </div>
             </section>
