@@ -50,5 +50,37 @@
                 }
             }
         }
-    }   
+    }
+
+    .pages-wrapper {
+        display: flex;
+        justify-content: center;
+        margin-top: 40px;
+        font-size: 26px;
+        font-weight: bold;
+        vertical-align: center;
+
+        button {
+            width: 60px;
+            margin: 0 20px;
+            background: $base-background-1;
+            border: 1px solid #fff;
+            outline: none;
+            cursor: pointer;
+
+            &:active {
+                background: lighten($base-background-1, 20%);
+            }
+        }
+
+        .hidden {
+            visibility: hidden;
+        }
+
+        p {
+            width: 40px;
+            margin: 0 20px;
+            text-align: center;
+        }
+    }
 }
