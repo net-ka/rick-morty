@@ -1,4 +1,4 @@
-Demo: net-ka.github.io/rick-morty
+Demo: https://net-ka.github.io/rick-morty
 
 | time spent | feature |
 |-------------|-------------|
