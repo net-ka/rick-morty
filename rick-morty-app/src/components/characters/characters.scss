@@ -1,0 +1,103 @@
+@import '../../styles/variables';
+
+
+.characters-wrapper {
+    padding: 120px 0;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    font-family: $base-font;
+
+    .characters-title {
+        @include page-title-font;
+        align-self: center;
+        margin-bottom: 50px;
+    }
+
+    .search-line {
+        font-size: 30px;
+        width: 50%;
+        margin-bottom: 40px;
+        text-align: center;
+        outline: none;
+        border: 1px solid $base-background-1;
+        font-weight: 200;
+
+        &:focus {
+            background-color: darken($body-background, 7%);
+        }
+    }
+
+    table {
+        width: 50vw;
+
+        .hero-row {
+            height: 90px;
+
+            &:hover {
+                background-color: darken($body-background, 7%);
+                cursor: pointer;
+            }
+
+            .hero-photo-data {
+                width: 80px;
+                height: 90px;
+                padding-left: 15px;
+                vertical-align: middle;
+                border-bottom: 1px solid #ddd;
+        
+                .hero-photo {
+                    width: 70px;
+                    height: 70px;
+                }
+            }
+        
+            .hero-name-data {
+                width: 300px;
+                height: 90px;
+                vertical-align: middle;
+                font-size: 26px;
+                border-bottom: 1px solid #ddd;
+
+                a {
+                    color: $link-color;
+                    text-decoration: none;
+                    font-weight: 600;
+                }
+            }
+        }
+    }
+
+    .pages-wrapper {
+        display: flex;
+        justify-content: center;
+        margin-top: 40px;
+        font-size: 26px;
+        font-weight: bold;
+        vertical-align: center;
+
+        button {
+            width: 60px;
+            margin: 0 20px;
+            background: $base-background-1;
+            border: 1px solid #fff;
+            outline: none;
+            cursor: pointer;
+
+            &:active {
+                background: lighten($base-background-1, 20%);
+            }
+        }
+
+        .hidden {
+            visibility: hidden;
+        }
+
+        p {
+            width: 40px;
+            margin: 0 20px;
+            text-align: center;
+        }
+    }
+}

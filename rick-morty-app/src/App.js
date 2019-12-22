@@ -1,24 +1,19 @@
-import React from 'react';
+import React, { Fragment } from 'react';
+
+import './styles/reset.scss';
 import './App.css';
 
-function App() {
-  return (
-    <div className="App">
-      <header className="App-header">
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
-  );
+import Header from './components/header/header';
+import Footer from './components/footer/footer';
+
+const App = ( {children} ) => {
+    return (
+      <Fragment>
+        <Header />
+        {children}
+        <Footer />
+      </Fragment>
+    );
 }
 
 export default App;
