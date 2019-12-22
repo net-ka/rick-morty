@@ -79,7 +79,7 @@ class CharactersComp extends Component {
                             return (
                             <tr key={id} className='hero-row' onClick={(e) => this.openName(e.currentTarget)}>
                                 <td className='hero-photo-data'><img className='hero-photo' src={image} alt={name} /></td>
-                                <td className='hero-name-data'><Link to={`/characters/${id}`}>{name}</Link></td>
+                                <td className='hero-name-data'><Link to={process.env.PUBLIC_URL + `/characters/${id}`}>{name}</Link></td>
                             </tr>
                             )
                         })}
