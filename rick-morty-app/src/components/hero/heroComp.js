@@ -6,11 +6,12 @@ const path = 'https://rickandmortyapi.com/api/character';
 class HeroComp extends Component {
 
     state = {
-        hero: {}
+        hero: {},
+        id: this.props.id
     }
 
     componentDidMount() {
-        const id = this.props.match.params.id || '';
+        const { id } = this.state;
 
         fetch(`${path}/${id}`)
         .then(response => response.json())

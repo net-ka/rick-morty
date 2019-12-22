@@ -20,19 +20,26 @@
         line-height: 1.5em;
     }
 
-    button {
-        width: 170px;
-        font-size: 20px;
+    a {
+        @include link-font;
+        display: inline-block;
+        width: 190px;
+        font-size: 24px;
         background: lighten($base-background-1, 20%);
-        padding: 10px 0;
-        border: 2px solid $base-background-1;
+        padding: 20px 0;
+        border: none;
+        text-align: center;
 
         &:first-child {
             margin-right: 20px;
         }
 
-        a {
-            @include link-font;
-        }  
+        &:hover {
+            background: lighten($base-background-1, 10%);
+        }
+
+        // a {
+        //     @include link-font;
+        // }  
     }
 }

@@ -17,8 +17,8 @@ class CharactersComp extends Component {
         .catch(error => error);
     }
 
-    forFetch(data) {
-        fetch(data)
+    forFetch(url) {
+        fetch(url)
         .then(response => response.json())
         .then(data => this.updateData(data))
         .catch(error => error);
@@ -28,14 +28,14 @@ class CharactersComp extends Component {
         this.setState({ data });
     }
 
-    changePage(data) {
-        this.forFetch(data);
+    changePage(url) {
+        this.forFetch(url);
 
         let page = document.querySelector('.current');
 
-        let pagePart = data.split(path).join('');
+        let pagePart = url.split(path).join('');
         let devider = pagePart.indexOf('&');
-        
+
         if (devider === -1) {
             page.innerHTML = pagePart;
         } else {
@@ -45,14 +45,18 @@ class CharactersComp extends Component {
     }
 
     findCharacter(value) {
-        const data = `${path}&name=${value}`;
+        const url = `${path}&name=${value}`;
 
         let page = document.querySelector('.current');
         if (page) {
             page.innerHTML = '1';
         }
 
-        this.forFetch(data);
+        this.forFetch(url);
+    }
+
+    openName(currentTarget) {
+        currentTarget.lastChild.firstChild.click();
     }
 
     render() {
@@ -68,11 +72,12 @@ class CharactersComp extends Component {
             <section className='characters-wrapper'>
                 <h1 className='characters-title'>Rick & Morty characters list</h1>
                 <input className="search-line" type="text" placeholder="Search" onChange={e => this.findCharacter(e.target.value)}></input>
+
                 { results && <table>
                     <tbody>
                         {results.map(({ id, name, image }) => {
                             return (
-                            <tr key={id} className='hero-row'>
+                            <tr key={id} className='hero-row' onClick={(e) => this.openName(e.currentTarget)}>
                                 <td className='hero-photo-data'><img className='hero-photo' src={image} alt={name} /></td>
                                 <td className='hero-name-data'><Link to={`/characters/${id}`}>{name}</Link></td>
                             </tr>
@@ -80,6 +85,7 @@ class CharactersComp extends Component {
                         })}
                     </tbody>
                 </table>}
+
                 <div className="pages-wrapper">
                     { prev && <button className="prev" onClick={() => this.changePage(prev)}>&lt;</button>}
                     { !prev && <button className="prev hidden">&lt;</button>}
